@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7f5">
+    <title>atguigu 助手</title>
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+    <div class="app">
+        <header class="topbar">
+            <div class="topbar-inner">
+                <div class="brand">
+                    <span class="brand-mark" aria-hidden="true">A</span>
+                    <div class="brand-copy">
+                        <h1>atguigu 助手</h1>
+                        <p class="service-status" id="service-status">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            <span id="service-status-text">服务在线</span>
+                        </p>
+                    </div>
+                </div>
+                <a class="docs-link" href="/docs">
+                    <span>API 文档</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <main class="conversation" id="conversation">
+            <div class="conversation-inner">
+                <section class="empty-state" id="empty-state" aria-label="欢迎">
+                    <article class="message message-assistant welcome-message">
+                        <div class="message-avatar" aria-hidden="true">A</div>
+                        <div class="message-content">
+                            <div class="message-bubble">你好，我是 atguigu 助手。请问你想了解什么？</div>
+                        </div>
+                    </article>
+
+                    <div class="quick-section">
+                        <p class="quick-label">常见问题</p>
+                        <div class="suggestions" aria-label="示例问题">
+                            <button class="suggestion" type="button" data-question="基础版每个月多少钱？">
+                                <span>套餐与价格</span>
+                                <strong>基础版每个月多少钱？</strong>
+                            </button>
+                            <button class="suggestion" type="button" data-question="首次购买后可以退款吗？">
+                                <span>退款规则</span>
+                                <strong>首次购买后可以退款吗？</strong>
+                            </button>
+                            <button class="suggestion" type="button" data-question="试用版到期后数据会保留多久？">
+                                <span>数据保留</span>
+                                <strong>试用版到期后数据会保留多久？</strong>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <div class="messages" id="messages" aria-live="polite"></div>
+            </div>
+        </main>
+
+        <footer class="composer-area">
+            <div class="composer-inner">
+                <form class="composer" id="chat-form">
+                    <label class="sr-only" for="question-input">输入问题</label>
+                    <textarea
+                        id="question-input"
+                        name="question"
+                        rows="1"
+                        maxlength="4000"
+                        placeholder="输入你的问题"
+                        autocomplete="off"
+                    ></textarea>
+                    <button class="send-button" id="send-button" type="submit" aria-label="发送问题" title="发送问题" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m5 12 7-7 7 7"></path>
+                            <path d="M12 19V5"></path>
+                        </svg>
+                    </button>
+                </form>
+                <div class="composer-meta">
+                    <span>内容由 AI 生成，请核对关键信息</span>
+                    <span id="character-count">0 / 4000</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
